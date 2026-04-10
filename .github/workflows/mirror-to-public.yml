@@ -1,0 +1,26 @@
+name: Mirror to Public Repo
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Remove private files
+        run: |
+          rm -rf CLAUDE.md docs/
+
+      - name: Push to public repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "mirror: $(git log -1 --format='%s' HEAD~1 2>/dev/null || echo 'sync')" --allow-empty
+          git remote add public https://x-access-token:${{ secrets.PUBLIC_REPO_TOKEN }}@github.com/ymmthrk/nen-diagnosis.git
+          git push public main --force
