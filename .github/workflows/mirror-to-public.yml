@@ -15,6 +15,7 @@ jobs:
       - name: Remove private files
         run: |
           rm -rf CLAUDE.md docs/
+          rm -f .github/workflows/mirror-to-public.yml
 
       - name: Push to public repo
         run: |
