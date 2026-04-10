@@ -104,15 +104,16 @@ export function calcFinalScores(
       nenScores[type] = Math.round(nenScores[type] * 0.9);
     }
   } else {
-    // 主要系統1位: 六角形距離で減衰 + 特質系-20%
+    // 主要系統1位: 六角形距離で減衰 + 特質系-40%
     for (const type of ALL_NEN_TYPES) {
       if (type === topType) continue;
       if (type === "specialization") {
-        nenScores[type] = Math.round(nenScores[type] * 0.8);
+        nenScores[type] = Math.round(nenScores[type] * 0.6);
       } else {
         const dist = getNenDistance(topType, type);
-        if (dist === 2) nenScores[type] = Math.round(nenScores[type] * 0.9);
-        if (dist === 3) nenScores[type] = Math.round(nenScores[type] * 0.8);
+        if (dist === 1) nenScores[type] = Math.round(nenScores[type] * 0.9);
+        if (dist === 2) nenScores[type] = Math.round(nenScores[type] * 0.75);
+        if (dist === 3) nenScores[type] = Math.round(nenScores[type] * 0.6);
       }
     }
   }
