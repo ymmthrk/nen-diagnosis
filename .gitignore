@@ -3,6 +3,11 @@ dist
 .vite
 *.local
 
+# Environment variables
+.env
+.env.*
+!.env.example
+
 # Claude Code local settings
 .claude/
 
