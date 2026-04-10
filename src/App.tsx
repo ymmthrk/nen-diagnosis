@@ -284,7 +284,8 @@ export default function App() {
               {/* 免責表示 */}
               <p className="mt-8 text-[11px] text-white/25 leading-relaxed text-center">
                 この診断はエゴグラム（交流分析）とMBTIを組み合わせた独自の解釈に基づくファンコンテンツです。
-                公式とは一切関係ありません。
+                「Hunter×Hunter」は冨樫義博/集英社の著作物です。「MBTI」はThe Myers-Briggs Companyの登録商標です。
+                本サイトは上記の権利者とは一切関係ありません。
               </p>
 
               {/* リトライボタン */}
