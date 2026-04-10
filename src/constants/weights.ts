@@ -12,10 +12,10 @@ export const NEN_WEIGHTS: Record<Exclude<NenType, "specialization">, Record<EgoA
 /** MBTI → 念系統 補正表（5段階化に対応して +4/+2） */
 export const MBTI_CORRECTION: Record<string, Partial<Record<NenType, number>>> = {
   E: { emission: 4, enhancement: 2 },
-  I: { conjuration: 4, manipulation: 2 },
-  S: { enhancement: 4, conjuration: 2 },
+  I: { manipulation: 4, conjuration: 2 },
+  S: { enhancement: 4, emission: 2 },
   N: { transmutation: 4, specialization: 2 },
-  T: { manipulation: 4, conjuration: 2 },
+  T: { manipulation: 4, transmutation: 2 },
   F: { emission: 4, enhancement: 2 },
   J: { conjuration: 4, manipulation: 2 },
   P: { transmutation: 4, emission: 2 },
