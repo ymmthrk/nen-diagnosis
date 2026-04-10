@@ -71,6 +71,18 @@ src/
 - 回答：5段階横並び（✕ △ ─ ○ ◎）
 - 念系統カラー：強化#F59E0B / 変化#8B5CF6 / 放出#EF4444 / 操作#10B981 / 具現化#3B82F6 / 特質#EC4899
 
+## リポジトリ構成
+
+このプロジェクトは2つのGitHubリポジトリで運用している。
+
+- **private**: `ymmthrk/nen-diagnosis-private` — 開発用（全ファイル管理）
+- **public**: `ymmthrk/nen-diagnosis` — 公開用（GitHub Pages）
+
+### ルール
+- ローカルのremote `origin` = privateリポ、`public` = publicリポ
+- privateリポへのpushで `mirror-to-public.yml` が自動実行され、CLAUDE.md・docs/を除外してpublicリポにミラー
+- **publicリポに直接pushしないこと**
+
 ## 免責
 
 > この診断はエゴグラム（交流分析）の理論をベースに、Hunter×Hunterの念能力系統へ独自に対応付けたファンコンテンツです。科学的・医学的な性格診断ではありません。
