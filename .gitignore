@@ -11,6 +11,10 @@ dist
 # Claude Code local settings
 .claude/
 
+# Development docs (not needed for public site)
+CLAUDE.md
+docs/
+
 # Backup files
 _backup_*
 
