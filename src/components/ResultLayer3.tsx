@@ -32,7 +32,7 @@ export default function ResultLayer3({ egoScores, mbtiType, showMbtiAsBonus }: P
         <div className="text-center">
           <div className="text-lg font-bold">{mountain.name}</div>
           <div className="text-[12px] text-white/35 mt-1">
-            念系統傾向：{mountain.nenTendency}
+            {mountain.nenTendency}に多いタイプ
           </div>
         </div>
       </div>
