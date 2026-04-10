@@ -1,0 +1,13 @@
+node_modules
+dist
+.vite
+*.local
+
+# Claude Code local settings
+.claude/
+
+# Backup files
+_backup_*
+
+# Windows Zone.Identifier metadata
+*:Zone.Identifier
