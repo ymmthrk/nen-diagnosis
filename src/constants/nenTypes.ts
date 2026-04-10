@@ -85,6 +85,20 @@ export const NEN_TYPES_MAIN: Exclude<NenType, "specialization">[] = [
 
 export const ALL_NEN_TYPES: NenType[] = [...NEN_TYPES_MAIN, "specialization"];
 
+/** 六角形上の配置順（原作準拠） */
+const NEN_CIRCLE: NenType[] = [
+  "enhancement", "transmutation", "conjuration",
+  "specialization", "manipulation", "emission",
+];
+
+/** 六角形上の2系統間の最短距離（0〜3） */
+export function getNenDistance(a: NenType, b: NenType): number {
+  const ia = NEN_CIRCLE.indexOf(a);
+  const ib = NEN_CIRCLE.indexOf(b);
+  const diff = Math.abs(ia - ib);
+  return Math.min(diff, 6 - diff);
+}
+
 export const MBTI_TYPES = [
   "ISTJ", "ISFJ", "INFJ", "INTJ",
   "ISTP", "ISFP", "INFP", "INTP",

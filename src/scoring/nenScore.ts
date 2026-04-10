@@ -1,5 +1,5 @@
 import type { NenType, EgoAxis } from "../constants/nenTypes";
-import { EGO_AXES, NEN_TYPES_MAIN, ALL_NEN_TYPES } from "../constants/nenTypes";
+import { EGO_AXES, NEN_TYPES_MAIN, ALL_NEN_TYPES, getNenDistance } from "../constants/nenTypes";
 import { NEN_WEIGHTS, MBTI_CORRECTION } from "../constants/weights";
 import type { EgoAnswer } from "./egogram";
 import { calcEgoScores, calcInconsistency } from "./egogram";
@@ -91,6 +91,31 @@ export function calcFinalScores(
 
   // 5. 特質系スコア算出
   nenScores.specialization += calcSpecializationScore(nenScores, egoScores, inconsistency);
+
+  // 5.5. 六角形距離による隣接系統減衰
+  const preDecaySorted = ALL_NEN_TYPES
+    .map((t): [NenType, number] => [t, nenScores[t]])
+    .sort((a, b) => b[1] - a[1]);
+  const topType = preDecaySorted[0][0];
+
+  if (topType === "specialization") {
+    // 特質系1位: 他5系統を一律-10%
+    for (const type of NEN_TYPES_MAIN) {
+      nenScores[type] = Math.round(nenScores[type] * 0.9);
+    }
+  } else {
+    // 主要系統1位: 六角形距離で減衰 + 特質系-20%
+    for (const type of ALL_NEN_TYPES) {
+      if (type === topType) continue;
+      if (type === "specialization") {
+        nenScores[type] = Math.round(nenScores[type] * 0.8);
+      } else {
+        const dist = getNenDistance(topType, type);
+        if (dist === 2) nenScores[type] = Math.round(nenScores[type] * 0.9);
+        if (dist === 3) nenScores[type] = Math.round(nenScores[type] * 0.8);
+      }
+    }
+  }
 
   // 6. ソートして最高スコアの系統を決定
   const sorted = ALL_NEN_TYPES

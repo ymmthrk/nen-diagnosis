@@ -75,10 +75,28 @@ if (inconsistency <= 1.5) {
 }
 ```
 
-## ステップ5：最終スコア
+## ステップ5：六角形距離による隣接系統減衰
+
+原作の念系統六角形（強化→変化→具現化→特質→操作→放出→強化）に基づき、1位系統からの距離に応じて他系統のスコアを減衰。
+
+**主要5系統が1位の場合：**
+
+| 距離 | 減衰 | 例（1位=強化系） |
+|------|------|----------------|
+| 0（自身） | なし | 強化系 |
+| 1（隣接） | なし | 変化系, 放出系 |
+| 2 | -10% | 具現化系, 操作系 |
+| 3（対角） | -20% | 特質系 |
+
+特質系のスコアは常に-20%（六角形の外の存在）。
+
+**特質系が1位の場合：**
+他5系統を一律-10%。
+
+## ステップ6：最終スコア
 
 ```typescript
-finalScore[type] = nenScore[type] + mbtiBonus[type] + specializationBonus
+finalScore[type] = nenScore[type] + mbtiBonus[type] + specializationBonus + decayAdjustment
 topType = argmax(finalScore)
 ```
 
