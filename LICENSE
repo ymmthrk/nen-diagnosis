@@ -19,3 +19,34 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+--------------------------------------------------------------------------
+
+THIRD-PARTY INTELLECTUAL PROPERTY NOTICE / 第三者知的財産に関する注記
+
+本リポジトリにおけるMITライセンスの適用対象は、著者が独自に作成したソース
+コードおよび診断ロジック等の実装部分に限られます。
+
+本リポジトリには、漫画作品「HUNTER×HUNTER」（著作者: 冨樫義博氏／発行: 株式会社
+集英社）に由来する名称・用語・キャラクター名・世界観設定等（以下「原作要素」）
+への言及が含まれますが、これらに関する著作権・商標権その他一切の権利は各権利者
+に帰属します。原作要素は本ライセンスの許諾対象には含まれず、MITライセンスに
+基づく使用・複製・改変・再配布・販売等の権利は原作要素には及びません。
+
+本リポジトリはファンメイドの非営利コンテンツであり、権利者による公式な許諾・
+提携・監修を受けたものではありません。本リポジトリの全部または一部を利用
+（フォーク・再配布・改変版の公開・商用利用等を含む）する場合、利用者は自らの
+責任において、原作要素に関する各権利者の権利を侵害しないよう留意するものと
+します。原作要素の利用に起因して生じたいかなる紛争・損害についても、著者は
+一切の責任を負いません。
+
+権利者からの削除・修正の要請があった場合、著者は速やかに対応いたします。
+
+The MIT License above applies only to the original source code and
+implementation authored by the repository owner. This repository contains
+references to names, terms, characters, and worldbuilding elements derived
+from the manga "HUNTER×HUNTER" (author: Yoshihiro Togashi / publisher:
+SHUEISHA Inc.); all rights in such elements remain with their respective
+owners and are NOT licensed under the MIT License above. This is a
+fan-made, non-commercial work and is not officially endorsed by or
+affiliated with the rights holders.
